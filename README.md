@@ -17,4 +17,7 @@ After about **4¼** seconds you should get a number printed on the screen. This 
 | ajor.co.uk/chip8 | Octo (1Kc./f.) | Octo (L. speed) | My emulator |
 |------------------|----------------|-----------------|-------------|
 | 206              | 20492          | 409823          | 2076        |
-If the emulator beeps and does not print anything, there's srry
+If the emulator beeps and does not print anything, there's an overflow and your result is higher than 10⁸. If this happens, just know: you have an absolute beast of a machine!
+
+## Contributing
+Feel free to contribute! But please do it via a pull request. Thanks!
