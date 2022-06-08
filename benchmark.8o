@@ -28,36 +28,36 @@
 		if d6 == 10 then d6d7
 		if d7 == 10 then d7d8
 		if d8 == 10 then oflw
-		va := delay
-		if va != 0 then again
+	va := delay
+	if va != 0 then again
+	
+	vc := 0
 		
-		vc := 0
-		
-		#Output
-		i := hex d8
-		sprite vc ve 5
-		vc += 5
-		i := hex d7
-		sprite vc ve 5
-		vc += 5
-		i := hex d6
-		sprite vc ve 5
-		vc += 5
-		i := hex d5
-		sprite vc ve 5
-		vc += 5
-		i := hex d4
-		sprite vc ve 5
-		vc += 5
-		i := hex d3
-		sprite vc ve 5
-		vc += 5
-		i := hex d2
-		sprite vc ve 5
-		vc += 5
-		i := hex d1
-		sprite vc ve 5
-		loop again
+	#Output
+	i := hex d8
+	sprite vc ve 5
+	vc += 5
+	i := hex d7
+	sprite vc ve 5
+	vc += 5
+	i := hex d6
+	sprite vc ve 5
+	vc += 5
+	i := hex d5
+	sprite vc ve 5
+	vc += 5
+	i := hex d4
+	sprite vc ve 5
+	vc += 5
+	i := hex d3
+	sprite vc ve 5
+	vc += 5
+	i := hex d2
+	sprite vc ve 5
+	vc += 5
+	i := hex d1
+	sprite vc ve 5
+	loop again
 
 #Overflow to next digit
 : d1d2
