@@ -28,8 +28,8 @@
 		if d6 == 10 then d6d7
 		if d7 == 10 then d7d8
 		if d8 == 10 then oflw
-	va := delay
-	if va != 0 then again
+		va := delay
+		if va != 0 then again
 	
 	vc := 0
 		
