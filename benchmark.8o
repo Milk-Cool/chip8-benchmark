@@ -1,0 +1,97 @@
+#CHIP-8 Benchmark by Milk_Cool
+
+#The result is how many loops has the program passed in 4¼ seconds.
+#If you hear a beeping sound, there's an overflow, the value is 10⁸ or higher and you have an absolute beast of a machine.
+
+:alias d1 v0
+:alias d2 v1
+:alias d3 v2
+:alias d4 v3
+:alias d5 v4
+:alias d6 v5
+:alias d7 v6
+:alias d8 v7
+
+: main
+	#Timer
+	va := 255
+	delay := va
+	
+	#Loop
+	loop
+		d1 += 1
+		if d1 == 10 then d1d2
+		if d2 == 10 then d2d3
+		if d3 == 10 then d3d4
+		if d4 == 10 then d4d5
+		if d5 == 10 then d5d6
+		if d6 == 10 then d6d7
+		if d7 == 10 then d7d8
+		if d8 == 10 then oflw
+		va := delay
+		if va != 0 then again
+		
+		vc := 0
+		
+		#Output
+		i := hex d8
+		sprite vc ve 5
+		vc += 5
+		i := hex d7
+		sprite vc ve 5
+		vc += 5
+		i := hex d6
+		sprite vc ve 5
+		vc += 5
+		i := hex d5
+		sprite vc ve 5
+		vc += 5
+		i := hex d4
+		sprite vc ve 5
+		vc += 5
+		i := hex d3
+		sprite vc ve 5
+		vc += 5
+		i := hex d2
+		sprite vc ve 5
+		vc += 5
+		i := hex d1
+		sprite vc ve 5
+		loop again
+
+#Overflow to next digit
+: d1d2
+	d1 := 0
+	d2 += 1
+;
+: d2d3
+	d2 := 0
+	d3 += 1
+;
+: d3d4
+	d3 := 0
+	d4 += 1
+;
+: d4d5
+	d4 := 0
+	d5 += 1
+;
+: d5d6
+	d5 := 0
+	d6 += 1
+;
+: d6d7
+	d6 := 0
+	d7 += 1
+;
+: d7d8
+	d7 := 0
+	d8 += 1
+;
+
+#Overflow out of d8
+: oflw
+	vb := 255
+	loop
+		buzzer := vb
+	again
